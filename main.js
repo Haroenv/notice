@@ -19,7 +19,7 @@ var notice = function(text){
 	if ("webkitAppearance" in document.body.style) {
 		close.style.webkitAppearance = "searchfield-cancel-button";
 	} else {
-		close.appendChild(document.createTextNode('x'));
+		close.appendChild(document.createTextNode('✕'));
 	}
 
 	document.body.insertBefore(notice, document.body.firstChild);
