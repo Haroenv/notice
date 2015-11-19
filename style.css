@@ -15,7 +15,7 @@
 }
 
 .notice--close {
-    min-width: 1em;
+    min-width: 1.1em;
     margin: 0 .5em;
     cursor: pointer;
     -webkit-user-select: none;
