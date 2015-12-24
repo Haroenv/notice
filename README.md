@@ -8,7 +8,7 @@ Demo: [haroen.me/notice](https://haroen.me/notice).
 
 # Usage
 
-Link both `style.css` and `main.js` in your html file. Then in a script you can make a new notice by doing
+Link both `notice.css` and `notice.js` in your html file. Then in a script you can make a new notice by doing
 
 ```js
 notice('the text inside the notice');
