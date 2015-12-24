@@ -12,11 +12,15 @@ Link both `notice.css` and `notice.js` in your html file. Then in a script you c
 
 ```js
 notice('the text inside the notice');
+notice('this text will show with a webkit close button',true);
 ```
 
 # Used by
 
 Haroen Viaene in [haroenv/maps-checker](https://github.com/haroenv/maps-checker).
+
+Haroen Viaene in [haroenv/movies](https://github.com/haroenv/movies).
+
 
 # License
 
