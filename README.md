@@ -8,12 +8,29 @@ Demo: [haroen.me/notice](https://haroen.me/notice).
 
 # Usage
 
-Link both `notice.css` and `notice.js` in your html file. Then in a script you can make a new notice by doing
+## manual way
+
+Link both `style.css` and `notice.js` in your html file. Then in a script you can make a new notice by doing
 
 ```js
-notice('the text inside the notice');
-notice('this text will show with a webkit close button',true);
+notice('with text');
+notice('with webkit close button',webit);
 ```
+
+## browserify
+You need to install this via npm first like this:
+
+```sh
+npm install --save git+https://github.com/haroenv/notice.git
+```
+
+Just require notice as any other CommonJS module after installing it via npm:
+
+```javascript
+var notice = require('notice');
+```
+
+In terms of CSS you have to decide whether you reference the CSS file, which is in the `node_modules` folder or use a tool like [parcelify](https://www.npmjs.com/package/parcelify) to bundle the CSS. 
 
 # Used by
 

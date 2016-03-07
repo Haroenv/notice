@@ -6,30 +6,59 @@
  * @author Haroen Viaene  <hello@haroen.me>
  * @version 0.2
  */
-var notice = function(text,webkit){
-	var notice = document.createElement('p');
-	var close = document.createElement('span');
-	var content = document.createTextNode(text);
+(function(root, factory) {
+  'use strict';
 
-	notice.appendChild(close);
-	notice.appendChild(content);
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define([], function() {
+      return (root.notice = factory());
+    });
+  } else if (typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like enviroments that support module.exports,
+    // like Node.
+    module.exports = factory();
+  } else {
+    // Browser globals
+    root.notice = factory();
+  }
+})(this, function() {
+  // UMD Definition above, do not remove this line
 
-	close.className += 'notice--close';
-	notice.className += 'notice';
+  // To get to know more about the Universal Module Definition
+  // visit: https://github.com/umdjs/umd
 
-	if (webkit) {
-		if ("webkitAppearance" in document.body.style) {
-			close.style.webkitAppearance = "searchfield-cancel-button";
-		} else {
-			close.appendChild(document.createTextNode('✕'));
-		}
-	} else {
-		close.appendChild(document.createTextNode('✕'));
-	}
+  'use strict';
 
-	document.body.insertBefore(notice, document.body.firstChild);
+  var notice = function(text, webkit) {
+    var notice = document.createElement('p');
+    var close = document.createElement('span');
+    var content = document.createTextNode(text);
 
-	close.addEventListener('click',function(){
-		document.body.removeChild(notice);
-	});
-};
+    notice.appendChild(close);
+    notice.appendChild(content);
+
+    close.className += 'notice--close';
+    notice.className += 'notice';
+
+    if (webkit) {
+      if ("webkitAppearance" in document.body.style) {
+        close.style.webkitAppearance = "searchfield-cancel-button";
+      } else {
+        close.appendChild(document.createTextNode('✕'));
+      }
+    } else {
+      close.appendChild(document.createTextNode('✕'));
+    }
+
+    document.body.insertBefore(notice, document.body.firstChild);
+
+    close.addEventListener('click', function() {
+      document.body.removeChild(notice);
+    });
+  };
+
+  return notice;
+
+});

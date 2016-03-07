@@ -1,0 +1,20 @@
+{
+  "name": "notice",
+  "version": "1.0.0",
+  "description": "A simple notice without any dependencies",
+  "main": "notice.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haroenv/notice.git"
+  },
+  "keywords": [
+    "notice",
+    "accessible"
+  ],
+  "author": "Haroen Viaene",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/Haroenv/notice/issues"
+  },
+  "homepage": "https://haroen.me/notice"
+}
