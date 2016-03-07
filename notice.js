@@ -36,17 +36,17 @@
     var close = document.createElement('span');
     var content = document.createTextNode(text);
 
+    notice.setAttribute('role', 'alert');
+
     notice.appendChild(close);
     notice.appendChild(content);
 
     close.className += 'notice--close';
     notice.className += 'notice';
 
-    if (webkit) {
+    if (webkit && "webkitAppearance" in document.body.style) {
       if ("webkitAppearance" in document.body.style) {
         close.style.webkitAppearance = "searchfield-cancel-button";
-      } else {
-        close.appendChild(document.createTextNode('✕'));
       }
     } else {
       close.appendChild(document.createTextNode('✕'));
